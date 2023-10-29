@@ -9,24 +9,7 @@ namespace Project2.Controllers
     //drinks hotmeals fastfoods
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
-        public IActionResult Index()
-        {
-            List<AllHome> allhomee = new List<AllHome>();
-            
-
-            return View(allhomee);
-        }
-
-        public IActionResult Drinks()
-        {
-            List<Drink> drinks = new List<Drink>()
+        List<Drink> drinks = new List<Drink>()
             {
                 new Drink
                 {
@@ -49,13 +32,8 @@ namespace Project2.Controllers
                     Count = 30,
                 }
             };
-                return View(drinks);
-        }
 
-
-        public IActionResult FastFoods() 
-        {
-            List<FastFood> fastfoods = new List<FastFood>()
+        List<FastFood> fastfoods = new List<FastFood>()
             {
                 new FastFood
                 {
@@ -78,12 +56,7 @@ namespace Project2.Controllers
                     Count = 50,
                 }
             };
-            return View(fastfoods);
-        }
-
-        public IActionResult HotMeals()
-        {
-            List<HotMeal> hotmeals = new List<HotMeal>()
+        List<HotMeal> hotmeals = new List<HotMeal>()
             {
                 new HotMeal
                 {
@@ -106,6 +79,39 @@ namespace Project2.Controllers
                     Count = 80,
                 }
             };
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
+        public IActionResult Index()
+        {
+            AllHome allHome = new AllHome
+            {
+                drinks = drinks,
+                fastFoods = fastfoods,
+                hotMeals = hotmeals,
+            };
+            return View(allHome);
+        }
+
+        public IActionResult Drinks()
+        {
+            return View(drinks);
+        }
+
+
+        public IActionResult FastFoods() 
+        {
+            
+            return View(fastfoods);
+        }
+
+        public IActionResult HotMeals()
+        {
+           
             return View(hotmeals);
         }
     }

@@ -2,8 +2,8 @@
 {
     public class AllHome
     {
-        List<Drink> drinks = new List<Drink>();
-        List<FastFood> fastFoods = new List<FastFood>();
-        List<HotMeal> hotMeals = new List<HotMeal>();
+        public List<Drink> drinks = new List<Drink>(); 
+        public List<FastFood> fastFoods = new List<FastFood>();
+        public List<HotMeal> hotMeals = new List<HotMeal>();
     }
 }
