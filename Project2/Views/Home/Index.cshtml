@@ -10,28 +10,28 @@
     <title>Index</title>
 </head>
 <body>
-    <h1>Drinks</h1>
+    <h3>Drinks</h3>
     @foreach(var item in Model.drinks)
     {
-        <h1>ID : @item.Id</h1>
-        <h1>Brand : @item.Brand</h1>
-        <h1>Count : @item.Count</h1>
+        <h3>ID : @item.Id</h3>
+        <h3>Brand : @item.Brand</h3>
+        <h3>Count : @item.Count</h3>
     }
 
-    <h1>FastFood</h1>
+    <h3>FastFood</h3>
     @foreach(var item in Model.fastFoods)
     {
-        <h1>ID : @item.Id</h1>
-        <h1>Type : @item.Type</h1>
-        <h1>Count : @item.Count</h1>
+        <h3>ID : @item.Id</h3>
+        <h3>Type : @item.Type</h3>
+        <h3>Count : @item.Count</h3>
     }
 
-    <h1>HotMeal</h1>
+    <h3>HotMeal</h3>
     @foreach (var item in Model.hotMeals)
     {
-        <h1>ID : @item.Id</h1>
-        <h1>Type : @item.Type</h1>
-        <h1>Count : @item.Count</h1>
+        <h3>ID : @item.Id</h3>
+        <h3>Type : @item.Type</h3>
+        <h3>Count : @item.Count</h3>
     }
 </body>
 </html>
