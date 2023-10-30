@@ -1,8 +1,6 @@
-﻿@model IEnumerable<Project2.Entities.AllHome>
+﻿@model Project2.Models.AllHomeViewModel;
 
-@{
-    Layout = null;
-}
+
 
 <!DOCTYPE html>
 
@@ -12,26 +10,28 @@
     <title>Index</title>
 </head>
 <body>
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <h1>Drinks</h1>
+    @foreach(var item in Model.drinks)
+    {
+        <h1>ID : @item.Id</h1>
+        <h1>Brand : @item.Brand</h1>
+        <h1>Count : @item.Count</h1>
+    }
+
+    <h1>FastFood</h1>
+    @foreach(var item in Model.fastFoods)
+    {
+        <h1>ID : @item.Id</h1>
+        <h1>Type : @item.Type</h1>
+        <h1>Count : @item.Count</h1>
+    }
+
+    <h1>HotMeal</h1>
+    @foreach (var item in Model.hotMeals)
+    {
+        <h1>ID : @item.Id</h1>
+        <h1>Type : @item.Type</h1>
+        <h1>Count : @item.Count</h1>
+    }
 </body>
 </html>

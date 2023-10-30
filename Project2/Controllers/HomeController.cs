@@ -88,7 +88,7 @@ namespace Project2.Controllers
 
         public IActionResult Index()
         {
-            AllHome allHome = new AllHome
+            AllHomeViewModel allHome = new AllHomeViewModel
             {
                 drinks = drinks,
                 fastFoods = fastfoods,
